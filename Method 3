@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.util.*;
+
+public class Main
+{ 
+   static int getmin(int arr[], int i, int end)
+   {
+      int min;
+
+      if(i == end-1)
+         return (arr[i] < arr[i + 1]) ? arr[i] : arr[i + 1];
+
+      min = getmin(arr, i + 1, end);
+
+      return (arr[i] < min) ? arr[i] : min;
+   }
+
+   public static void main(String args[])
+   {
+
+     int arr[] = {12, 13, 1, 10, 34, 10};
+     int end = arr.length-1;
+     System.out.print(getmin(arr, 0, end)); 
+   }
+}
